@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Settings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="settings-card" aria-labelledby="settings-heading">
+      <header class="settings-card__header">
+        <h1 id="settings-heading">Profile Settings</h1>
+        <p class="settings-card__subtitle">Update your personal information and preferences.</p>
+      </header>
+
+      <form id="settings-form" class="settings-form" novalidate>
+        <div class="form-field">
+          <label for="full-name">Full Name <span class="required-indicator" aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="full-name"
+            name="fullName"
+            autocomplete="name"
+            required
+            aria-required="true"
+            aria-describedby="full-name-error"
+            aria-invalid="false"
+          >
+          <p id="full-name-error" class="field-error" role="alert" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email Address <span class="required-indicator" aria-hidden="true">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            required
+            aria-required="true"
+            aria-describedby="email-error"
+            aria-invalid="false"
+          >
+          <p id="email-error" class="field-error" role="alert" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="theme">Theme</label>
+          <select id="theme" name="theme" aria-describedby="theme-hint">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+          <p id="theme-hint" class="field-hint">Choose your preferred color scheme.</p>
+        </div>
+
+        <div class="form-field form-field--checkbox">
+          <input
+            type="checkbox"
+            id="email-notifications"
+            name="emailNotifications"
+          >
+          <label for="email-notifications">Enable Email Notifications</label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="save-button" class="btn btn--primary" disabled>
+            Save
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
